@@ -1,13 +1,15 @@
 #!/bin/bash
-# OS: Windows
+# OS: Debian or Debian Based Distributions
 # Backup-Ordner definieren
-backup_dir="/c/Documents/Docker_Backup"
+
+backup_dir="/c/Docker_Backup"
 
 # Stoppen der Docker-Container
 docker stop downloads-wordpress-1
 docker stop downloads-db-1
 
 # Erstellen des Backup-Ordners, falls er nicht existiert
+mkdir -p "$backup_dir"
 mkdir -p "$backup_dir/wordpress"
 mkdir -p "$backup_dir/database"
 
